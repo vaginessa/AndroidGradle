@@ -1,12 +1,15 @@
 language: android
 jdk: oraclejdk7
-env:
-  matrix:
-    - ANDROID_TARGET=android-22
+# env:
+#   matrix:
+#     - ANDROID_TARGET=android-22
 
 android:
   components:
     - build-tools-22.0.1
+    - android-22
+  licenses:
+    - 'android-sdk-license-.+'
 
 
 before_script:
@@ -20,6 +23,3 @@ script:
   # - ./gradlew connectedAndroidTest
   - ./gradlew assembleDebug
   # - ./gradlew installDebug --stacktrace
-cache:
-  directories:
-    - $HOME/.gradle
